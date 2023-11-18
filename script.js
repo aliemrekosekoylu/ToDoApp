@@ -26,7 +26,7 @@
    function toDo() {
     
     const li = document.createElement('li')
-    li.classList.add('d-flex', 'justify-content-between', 'align-item-center', 'bg-warning', 'px-3', 'rounded-2', 'mt-2')
+    li.classList.add('d-flex', 'justify-content-between', 'align-item-center', 'bg-secondary', 'px-3', 'rounded-2', 'mt-2')
 
     const p = document.createElement('p')
     p.classList.add('mt-3')
@@ -69,6 +69,19 @@
             yazi.classList.toggle('text-decoration-line-through')
             yazi.classList.toggle('text-white')
 
+        })
+
+        trash.addEventListener('mouseover', () => {
+            trash.style.color = 'yellowgreen'
+        })
+
+        trash.addEventListener('mouseout', () => {
+            trash.style.color = 'black'
+        })
+
+        trash.addEventListener('click', function () {
+            let sil = this.parentElement.parentElement
+            sil.remove()
         })
 
         
