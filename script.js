@@ -12,13 +12,21 @@
    const btn = document.querySelector('#btn')
    const liste = document.querySelector('#liste')
 
+    btn.addEventListener('click', toDo)
 
+
+    input.addEventListener('keyup', (element) => {
+        console.log(element.code)
+        if (element.keyCode == 13) {
+            toDo()
+        }
+    })
 
 
    function toDo() {
     
     const li = document.createElement('li')
-    li.classList.add('d-flex', 'justify-content-between', 'align-item-center', 'bg-warning', 'px-3', 'rounded-2')
+    li.classList.add('d-flex', 'justify-content-between', 'align-item-center', 'bg-warning', 'px-3', 'rounded-2', 'mt-2')
 
     const p = document.createElement('p')
     p.classList.add('mt-3')
@@ -26,13 +34,24 @@
 
 
     const iconDiv = document.createElement('div')
-    iconDiv.setAttribute('class', 'd-flex gap-3')
+    iconDiv.setAttribute('class', 'd-flex gap-3 align-items-center')
 
     const trash = document.createElement('i')
     trash.classList.add('fa-solid', 'fa-trash', 'fa-bounce')
 
     const okay = document.createElement('i')
-    okay.setAttribute('class', 'fa-solid fa-thumbs fa-beat')
+    okay.setAttribute('class', 'fa-solid fa-thumbs-up fa-beat')
 
+    if (input.value != '') {
+        iconDiv.append(okay)
+        iconDiv.append(trash)
+        li.append(p)
+        li.append(iconDiv)
+        liste.append(li)
+        
+    } else {
+        alert('Boş Bırakılmaz')
+    }
 
+    input.value = ''
    }
