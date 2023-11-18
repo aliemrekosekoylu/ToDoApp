@@ -20,4 +20,19 @@
     const li = document.createElement('li')
     li.classList.add('d-flex', 'justify-content-between', 'align-item-center', 'bg-warning', 'px-3', 'rounded-2')
 
+    const p = document.createElement('p')
+    p.classList.add('mt-3')
+    p.innerHTML = input.value.trim()
+
+
+    const iconDiv = document.createElement('div')
+    iconDiv.setAttribute('class', 'd-flex gap-3')
+
+    const trash = document.createElement('i')
+    trash.classList.add('fa-solid', 'fa-trash', 'fa-bounce')
+
+    const okay = document.createElement('i')
+    okay.setAttribute('class', 'fa-solid fa-thumbs fa-beat')
+
+
    }
